@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home/Home.vue'
+
+const Home = () => import('../views/Home/Home')
+const Category = () => import('../views/Category/Category')
+const Cart = () => import('../views/Cart/Cart')
+const Profile = () => import('../views/Profile/Profile')
 
 Vue.use(VueRouter)
 
@@ -9,7 +13,26 @@ const routes = [
         path: '/',
         name: 'Home',
         component: Home
-    }
+    },
+    {
+        path: '/home',
+        name: 'Home',
+        component: Home
+    },
+    {
+        path: '/category',
+        name: 'Category',
+        component: Category
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: Cart
+    },{
+        path: '/profile',
+        name: 'Profile',
+        component: Profile
+    },
 ]
 
 const router = new VueRouter({
